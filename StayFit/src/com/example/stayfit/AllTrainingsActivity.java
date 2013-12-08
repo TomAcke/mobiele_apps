@@ -49,7 +49,7 @@ public class AllTrainingsActivity extends ListActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test);
+        setContentView(R.layout.geschiedenis_main);
         //setContentView(R.layout.geschiedenis_main);
  
         // Hashmap for ListView

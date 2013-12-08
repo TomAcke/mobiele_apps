@@ -13,12 +13,16 @@
     <string name="textKaart">Kaart laden</string>
     <string name="textInformatie">Informatie laden</string>
     <string name="textDuur">TIME</string>
+    <string name="textDistance">DISTANCE</string>
+    <string name="textDistanceRan">0.0</string>
+    <string name="textDistanceFormat">km</string>
     <string name="btnStart">Start</string>
     <string name="btnStop">Stop</string>
     <string name="btnResume">Resume</string>
     <string name="chrTimer">Timer</string>
     <string name="pauseDescription">button to pause</string>
     <string name="chronometerDescription">image of a chronometer</string>
+    <string name="ActivityDescription">image of the chosen activity</string>
     <string name="gps_disabled_message">gps is disabled</string>
     <string name="title_activity_all_trainigs">AllTrainigsActivity</string>
     <string name="hello_world">Hello world!</string>
