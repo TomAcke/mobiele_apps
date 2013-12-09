@@ -3,9 +3,12 @@ package com.example.stayfit;
 import java.util.Locale;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 //import android.app.AlertDialog;
 //import android.content.DialogInterface;
 import android.content.Intent;
+import android.location.LocationManager;
 //import android.location.Location;
 //import android.location.LocationListener;
 //import android.location.LocationManager;
@@ -24,6 +27,7 @@ import android.view.ViewGroup;
 //import android.widget.Button;
 import android.widget.Chronometer;
 //import android.app.Activity;
+import android.widget.Toast;
 
 
 public class MainActivity extends FragmentActivity {
@@ -47,6 +51,7 @@ public class MainActivity extends FragmentActivity {
     long timeWhenPaused = 0;
     long timeRun = 0;
     boolean paused = false;
+    boolean cancel = true;
 
     //@SuppressWarnings("null")
 	@Override
@@ -62,7 +67,7 @@ public class MainActivity extends FragmentActivity {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
-        
+                
         
     }
 
@@ -76,37 +81,54 @@ public class MainActivity extends FragmentActivity {
     
     public void startExercise(View view) {
     	
+        LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
     	
-    	findViewById(R.id.ButtonStop).setVisibility(View.VISIBLE);
-    	findViewById(R.id.ButtonStart).setVisibility(View.INVISIBLE);
-    	findViewById(R.id.ButtonPause).setVisibility(View.VISIBLE);
-    	findViewById(R.id.ButtonResume).setVisibility(View.INVISIBLE);
+        if(paused==false){
+        
+    	if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
+    		Toast.makeText(this, "GPS is Enabled in your devide", Toast.LENGTH_SHORT).show();
+    		cancel=false;
+    		}
+    	else{
+    		showGPSDisabledAlertToUser();
+    		}
     	
+        }
+        
+    	if (cancel == false){
 
-       if(paused == false)
-       {
-    	((Chronometer) findViewById(R.id.chronometer)).setBase(SystemClock.elapsedRealtime()
-                +timeWhenStopped);
-       }
-       else
-       {
-    	   ((Chronometer) findViewById(R.id.chronometer)).setBase(SystemClock.elapsedRealtime()
-                   +timeWhenPaused);
-    	   
-    	   paused = false;
-    	   
-       }
+        	findViewById(R.id.ButtonStop).setVisibility(View.VISIBLE);
+        	findViewById(R.id.ButtonStart).setVisibility(View.INVISIBLE);
+        	findViewById(R.id.ButtonPause).setVisibility(View.VISIBLE);
+        	findViewById(R.id.ButtonResume).setVisibility(View.INVISIBLE);
+    		
+    		
+	       if(paused == false)
+	       {
+	    	((Chronometer) findViewById(R.id.chronometer)).setBase(SystemClock.elapsedRealtime()
+	                +timeWhenStopped);
+	       }
+	       else
+	       {
+	    	   ((Chronometer) findViewById(R.id.chronometer)).setBase(SystemClock.elapsedRealtime()
+	                   +timeWhenPaused);
+	    	   
+	    	   paused = false;
+	    	   
+	       }
        
        
        
        
-    	((Chronometer) findViewById(R.id.chronometer)).start();
+	       ((Chronometer) findViewById(R.id.chronometer)).start();
+    	}
     	
    	
     	
     }
     
     public void stopExercise(View view) {
+    	
     	
     	
        
@@ -120,6 +142,7 @@ public class MainActivity extends FragmentActivity {
     	((Chronometer) findViewById(R.id.chronometer)).stop();
     	timeRun = timeWhenStopped;
     	timeWhenStopped = 0;
+    	cancel = true;
     	
    	
     	
@@ -144,6 +167,43 @@ public class MainActivity extends FragmentActivity {
     	Intent i = new Intent(getApplicationContext(), AllTrainingsActivity.class);
     	startActivity(i);
     }
+    
+    /**
+     * Method to check if the gps is enabled, if not the user gets prompted to enable
+     */
+    
+    private void showGPSDisabledAlertToUser(){
+    	
+    	AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+    	alertDialogBuilder.setMessage("GPS is disabled in your device. Would you like to enable it?")
+    	.setCancelable(false)
+    	.setPositiveButton("Enable GPS",
+    	new DialogInterface.OnClickListener(){
+    		
+	    	public void onClick(DialogInterface dialog, int id){
+		    	cancel = false;
+		    	Intent callGPSSettingIntent = new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+		    	startActivity(callGPSSettingIntent);
+	    	
+	    	}
+    	
+    	});
+    	
+    	alertDialogBuilder.setNegativeButton("Cancel",
+	    new DialogInterface.OnClickListener(){
+	    	public void onClick(DialogInterface dialog, int id){
+		    	cancel = true;
+		    	dialog.cancel();
+		    	
+		    	
+		    	
+	    	}
+    	
+    	});
+    	
+    	AlertDialog alert = alertDialogBuilder.create();
+    	alert.show();
+    	}
 
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
