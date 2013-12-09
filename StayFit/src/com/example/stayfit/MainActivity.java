@@ -3,15 +3,15 @@ package com.example.stayfit;
 import java.util.Locale;
 
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
+//import android.app.AlertDialog;
+//import android.content.DialogInterface;
 import android.content.Intent;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
+//import android.location.Location;
+//import android.location.LocationListener;
+//import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.provider.Settings;
+//import android.provider.Settings;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -21,9 +21,9 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+//import android.widget.Button;
 import android.widget.Chronometer;
-import android.app.Activity;
+//import android.app.Activity;
 
 
 public class MainActivity extends FragmentActivity {
@@ -48,7 +48,7 @@ public class MainActivity extends FragmentActivity {
     long timeRun = 0;
     boolean paused = false;
 
-    @SuppressWarnings("null")
+    //@SuppressWarnings("null")
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,6 +81,7 @@ public class MainActivity extends FragmentActivity {
     	findViewById(R.id.ButtonStart).setVisibility(View.INVISIBLE);
     	findViewById(R.id.ButtonPause).setVisibility(View.VISIBLE);
     	findViewById(R.id.ButtonResume).setVisibility(View.INVISIBLE);
+    	
 
        if(paused == false)
        {

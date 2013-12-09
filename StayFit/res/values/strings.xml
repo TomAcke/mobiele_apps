@@ -16,9 +16,10 @@
     <string name="textDistance">DISTANCE</string>
     <string name="textDistanceRan">0.0</string>
     <string name="textDistanceFormat">km</string>
-    <string name="btnStart">Start</string>
-    <string name="btnStop">Stop</string>
-    <string name="btnResume">Resume</string>
+    <string name="btnStart">START</string>
+    <string name="btnStop">STOP</string>
+    <string name="btnResume">RESUME</string>
+    <string name="btnShowList">Show list</string>
     <string name="chrTimer">Timer</string>
     <string name="pauseDescription">button to pause</string>
     <string name="chronometerDescription">image of a chronometer</string>
@@ -27,5 +28,6 @@
     <string name="title_activity_all_trainigs">AllTrainigsActivity</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_test">TestActivity</string>
+    <string name="title_activity_distance">DistanceActivity</string>
 
 </resources>

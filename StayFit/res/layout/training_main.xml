@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:columnCount="1"
+    android:background="@drawable/background_image"
     android:orientation="vertical" >
 
     <Space
@@ -14,6 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="110dp"
+        android:textColor="#fff"
         android:text="@string/textDistance"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -33,6 +35,7 @@
         android:layout_marginLeft="110dp"
         android:layout_marginTop="5dp"
         android:textSize="40sp"
+        android:textColor="#fff"
         android:text="@string/textDistanceRan"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -43,6 +46,7 @@
         android:layout_marginLeft="190dp"
         android:layout_marginTop="-60dp"
         android:textSize="40sp"
+        android:textColor="#fff"
         android:text="@string/textDistanceFormat" />
 
     <Space
@@ -54,6 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="110dp"
+        android:textColor="#fff"
         android:text="@string/textDuur"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -61,7 +66,7 @@
         android:id="@+id/imageChronometer"
         android:layout_width="42dp"
         android:layout_height="22dp"
-        android:layout_marginLeft="190dp"
+        android:layout_marginLeft="165dp"
         android:layout_marginTop="-25dp"
         android:contentDescription="@string/chronometerDescription"
         android:src="@drawable/chronometer_icon" />
@@ -72,6 +77,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="110dp"
         android:layout_marginTop="10dp"
+        android:textColor="#fff"
         android:text="@string/chrTimer"
         android:textSize="40sp" />
 
@@ -85,11 +91,12 @@
         android:layout_height="70dp"        
         android:layout_marginLeft="75dp"
         android:layout_marginBottom="-70dp"
+        android:paddingLeft="10dp"
         android:background="@drawable/standard_button_style"
         android:drawableLeft="@drawable/play_icon"
         android:onClick="startExercise"
         android:text="@string/btnResume"
-        android:textSize="35sp"
+        android:textSize="30sp"
         android:visibility="invisible" />
 
     <Button
@@ -98,11 +105,12 @@
         android:layout_height="70dp"
         android:layout_marginLeft="75dp"
         android:layout_marginBottom="-70dp"
+        android:paddingLeft="10dp"
         android:background="@drawable/standard_button_style"
         android:drawableLeft="@drawable/stop_icon"
         android:onClick="stopExercise"
         android:text="@string/btnStop"
-        android:textSize="50sp"
+        android:textSize="40sp"
         android:visibility="invisible" />
 
     <Button
@@ -110,11 +118,12 @@
         android:layout_width="196dp"
         android:layout_height="70dp"
         android:layout_marginLeft="75dp"
+        android:paddingLeft="10dp"
         android:background="@drawable/standard_button_style"
         android:drawableLeft="@drawable/play_icon"
         android:onClick="startExercise"
         android:text="@string/btnStart"
-        android:textSize="50sp" />
+        android:textSize="40sp" />
 
     <Button
         android:id="@+id/ButtonPause"

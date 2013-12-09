@@ -1,7 +1,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="@drawable/background_image" >
 
     <Button
         android:id="@+id/ButtonShowList"
@@ -9,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
         android:background="@drawable/standard_button_style"
-        android:text="show list"
+        android:text="@string/btnShowList"
         android:onClick="showList"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
