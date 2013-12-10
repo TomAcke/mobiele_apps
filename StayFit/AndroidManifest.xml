@@ -7,7 +7,7 @@
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="15" />
-    
+
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
@@ -47,7 +47,10 @@
             android:name="com.example.stayfit.TestActivity"
             android:label="@string/title_activity_test" >
         </activity>
-
+        <activity
+            android:name="com.example.stayfit.InformationActivity"
+            android:label="@string/title_activity_information" >
+        </activity>
     </application>
 
     <!-- Internet Permissions -->
