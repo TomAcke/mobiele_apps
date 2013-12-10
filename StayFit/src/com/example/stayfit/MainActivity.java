@@ -204,14 +204,6 @@ public class MainActivity extends FragmentActivity {
     	AlertDialog alert = alertDialogBuilder.create();
     	alert.show();
     	}
-    
-    private void openInformation() {
-    	
-    	
-    	
-    	
-    	
-    }
 
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
@@ -264,7 +256,7 @@ public class MainActivity extends FragmentActivity {
 
         @Override
         public int getCount() {
-            // Show 2 total tabs.
+            // Show 4 total tabs.
             return 2;
         }
 

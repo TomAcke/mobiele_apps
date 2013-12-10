@@ -6,8 +6,8 @@
     <string name="action_information">Information</string>
     <string name="title_section1">Training</string>
     <string name="title_section2">History</string>
-    <string name="title_section3">General</string>
-    <string name="title_section4">Start to run</string>
+    <string name="title_section3">Kaart</string>
+    <string name="title_section4">Informatie</string>
     <string name="textTraining">Kies je training</string>
     <string name="textGeschiedenis">Geschiedenis laden</string>
     <string name="textKaart">Kaart laden</string>
@@ -29,6 +29,5 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_test">TestActivity</string>
     <string name="title_activity_distance">DistanceActivity</string>
-    <string name="title_activity_information">InformationActivity</string>
 
 </resources>
